@@ -78,7 +78,13 @@ table {
 function OnStart() {
   var xml = new XMLHttpRequest();
   xml.open("GET","Beta.php",true);
-  xml.onload = alert(xml.responseText);
+  xml.onreadystatechange = function() {
+    if (xml.readyState == 4) {
+      if (xml.status == 200) {
+        alert(xml.responseText);
+      }
+    }
+  }
   xml.send(null);
 }
 </script>
