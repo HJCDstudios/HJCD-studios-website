@@ -76,6 +76,10 @@ table {
 </style>
 <script type="text/javascript">
 function OnStart() {
+  var xml = new XMLHttpRequest();
+  xml.open("GET","Beta.php",true);
+  xml.onload = alert(xml.responseText);
+  xml.send(null);
 }
 </script>
 </body>
