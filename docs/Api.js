@@ -16,8 +16,7 @@ function apiRequest(method, url, jsonData, callback) {
       if (xhr.status == 200 || xhr.status == 201) {
         callback(xhr.responseText);
       } else {
-        cout(xhr.status);
-        cout(xhr.responseText);
+        callback(xhr.responseText);
       }
     }
   }
