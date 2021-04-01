@@ -32,7 +32,7 @@ function ResetApi() {
 githubApi = {};
 githubApi.header = {};
 githubApi.header.Accept = "application/vnd.github.v3+json"; //make sure we use v3
-githubApi.header.Authorization = "token <token>";
+githubApi.header.Authorization = "token ";
 githubApi.baseUrl = "https://api.github.com";
 githubApi.username = "HJCDstudios";
 githubApi.nameRepo = "";
@@ -49,7 +49,7 @@ var jsonData = new Object();
 	if(!githubApi.newFile) {
 		jsonData.sha = githubApi.sha;
 	}
-	var url = githubApi.baseUrl+"/repos/"+githubApi.username+"/"+repo+"/contents/"+path;
+	var url = githubApi.baseUrl+"/repos/"+name+"/"+repo+"/contents/"+path;
 	jsonData = JSON.stringify(jsonData); //api expects json as string
 	cout(jsonData);
 	apiRequest("PUT", url, jsonData, function(r) {
