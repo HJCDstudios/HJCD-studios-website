@@ -1,6 +1,14 @@
 td {
   text-align: center;
 }
+.max-width {
+  width: 100%;
+}
+.btn_classic_rect {
+  color: rgb(0,150,255);
+  border-color: rgb(0,150,255);
+  background-color: white;
+}
 .theme {
   color: rgb(0,150,255);
 }
