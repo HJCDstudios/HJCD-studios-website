@@ -28,6 +28,7 @@ function apiRequest(method, url, jsonData, callback) {
   xhr.send(jsonData);
   ResetApi();
 }
+function cout(){}
 function ResetApi() {
 githubApi = {};
 githubApi.header = {};
@@ -39,4 +40,11 @@ githubApi.nameRepo = "";
 githubApi.sha = "";
 githubApi.path = "";
 githubApi.newFile = false;
+}
+function CreateFile(name,repo,filename,path,callback) {
+githubApi.newFile = true;
+githubApi.path = path;
+githubApi.username = name;
+githubApi.nameRepo = repo;
+apiRequest("PUT",githubApi.baseurl,githubApi,callback);
 }
