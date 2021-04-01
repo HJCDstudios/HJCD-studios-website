@@ -12,6 +12,9 @@ td {
 .theme {
   color: rgb(0,150,255);
 }
+.f-20 {
+  font-size: 20px;
+}
 .f {
   font-family: sans-serif;
 }
