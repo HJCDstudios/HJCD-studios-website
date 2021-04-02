@@ -1,6 +1,6 @@
 {
   "Version":1.3,
   "Drawings":["Happy Face","Cat"],
-  "By":["HJCD studios","HJCD studios"],
+  "Author":["HJCD studios","HJCD studios"],
   "Links":["data/1.json","data/2.json"]
 }
