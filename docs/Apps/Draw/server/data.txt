@@ -2,5 +2,5 @@
   "Version":1.3,
   "Drawings":["Happy Face","Cat"],
   "Author":["HJCD studios","HJCD studios"],
-  "Links":["data/2.txt","data/1.txt"]
+  "Links":["data/2.txt","https://hjcdstudios.github.io/Apps/Draw/server/data/1.txt"]
 }
