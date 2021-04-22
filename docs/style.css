@@ -1,35 +1,3 @@
-.center {
-  text-align: center;
-}
-.max-width {
-  width: 100%;
-}
-.btn_classic_rect {
-  color: rgb(0,150,255);
-  border-color: rgb(0,150,255);
-  background-color: white;
-}
-.theme {
-  color: rgb(0,150,255);
-}
-.f-20 {
-  font-size: 20px;
-}
-.f {
-  font-family: sans-serif;
-}
-.white {
-  color: white;
-}
-.red {
-  color: red;
-}
-.blue {
-  color: blue;
-}
-.green {
-  color: rgb(0,255,0);
-}
 .btn_dark {
   background-color: rgb(81,81,81);
   color: white;
@@ -37,6 +5,8 @@
   border: none;
   font-family: sans-serf;
   font-size: 20px;
+  margin-Top: 5px;
+  transition-duration: 1s;
   box-shadow: 0px 2px 4px black;
 }
 .btn_dark:hover {
@@ -50,6 +20,8 @@
   border: none;
   font-family: sans-serf;
   font-size: 20px;
+  margin-Top: 5px;
+  transition-duration: 1s;
   box-shadow: 0px 2px 4px black;
 }
 .btn_light:hover {
@@ -79,17 +51,42 @@
   box-shadow: 0px 2px 4px black;
 }
 .select_light:hover {
-  background-color: rgb(250,250,250);
+  background-color: rgb(240,240,240);
   box-shadow: 0px 1px 4px black;
 }
-.text_light,.text_dark {
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(81,81,81);
+.txt_light {
   font-size: 20px;
+  border-radius: 5px;
+  background-color: white;
+  border-color: rgb(81,81,81);
   color: rgb(81,81,81);
-  box-shadow: 0px 2px 4px black;
 }
-.text_light:hover,.text_dark:hover {
-  box-shadow: 0px 0px 4px black;
+.txt_dark {
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgb(81,81,81);
+  borderccolor: white;
+  color: white;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: show;
+}
+.txt_center {
+  text-align: center;
+}
+.txt_left {
+  text-align: left;
+}
+.txt_right {
+  text-align: right;
+}
+.login {
+  margin-top: 300px;
+}
+.text_light {
+  color: rgb(81,81,81);
+  font-family: sans-serif;
 }
