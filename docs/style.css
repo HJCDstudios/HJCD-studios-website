@@ -107,3 +107,17 @@ td {
 .center {
   text-align: center;
 }
+
+/* for news */
+.news {
+  width: 80%;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+.news_title {
+  text-align: center;
+}
+.news_date {
+  text-align: left;
+  color: rgb(81,81,81);
+}
