@@ -116,8 +116,16 @@ td {
 }
 .news_title {
   text-align: center;
+  font-family: sans-serif
+  font-size: 24px;
+}
+.news_index {
+  font-family: sans-serif;
+  font-size: 19px;
+  font-family: sans-serif;
 }
 .news_date {
   text-align: left;
   color: rgb(81,81,81);
+  font-family: sans-serif;
 }
