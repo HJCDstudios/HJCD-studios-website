@@ -6,7 +6,7 @@
   font-family: sans-serf;
   font-size: 20px;
   margin-Top: 5px;
-  transition-duration: 1s;
+  transition-duration: 0.2;
   box-shadow: 0px 2px 4px black;
 }
 .btn_dark:hover {
@@ -21,7 +21,7 @@
   font-family: sans-serf;
   font-size: 20px;
   margin-Top: 5px;
-  transition-duration: 1s;
+  transition-duration: 0.2;
   box-shadow: 0px 2px 4px black;
 }
 .btn_light:hover {
