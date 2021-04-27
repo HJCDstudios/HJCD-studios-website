@@ -5,7 +5,7 @@
   border: none;
   font-family: sans-serf;
   font-size: 20px;
-  margin-Top: 5px;
+  margin-top: 3px;
   transition-duration: 0.2;
   box-shadow: 0px 2px 4px black;
 }
@@ -20,7 +20,7 @@
   border: none;
   font-family: sans-serf;
   font-size: 20px;
-  margin-Top: 5px;
+  margin-top: 3px;
   transition-duration: 0.2;
   box-shadow: 0px 2px 4px black;
 }
@@ -57,6 +57,7 @@
 .txt_light {
   font-size: 20px;
   border-radius: 5px;
+  margin-top: 3px;
   background-color: white;
   border-color: rgb(81,81,81);
   color: rgb(81,81,81);
@@ -64,6 +65,7 @@
 .txt_dark {
   font-size: 20px;
   border-radius: 5px;
+  margin-top: 3px;
   background-color: rgb(81,81,81);
   borderccolor: white;
   color: white;
@@ -129,4 +131,14 @@ td {
   color: rgb(81,81,81);
   font-family: sans-serif;
   font-size: 12px;
+}
+/* For TTS */
+.txt_light-s {
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 3px;
+  background-color: white;
+  border-color: rgb(81,81,81);
+  color: rgb(81,81,81);
+  width: 100px;
 }
