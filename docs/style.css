@@ -11,10 +11,15 @@
   transition: all 0.25s ease-in-out;;
 }
 .btn_dark:hover {
+  font-size: 25px;
+}
+.btn_dark:active {
+  font-size: 25px;
   color: rgb(81,81,81);
   background-color: white;
   border-bottom: 2px solid white;
 }
+
 .btn_light {
   letter-spacing: 1px;
   background-color: rgba(0,0,0,0);
@@ -28,10 +33,15 @@
   transition: all 0.25s ease-in-out;;
 }
 .btn_light:hover {
+  font-size: 25px;
+}
+.btn_light:active {
+  font-size: 25px;
   color: white;
   background-color: rgb(81,81,81);
   border-bottom: 2px solid rgb(81,81,81);
 }
+
 .select_dark {
   letter-spacing: 1px;
   background-color: rgba(0,0,0,0);
@@ -45,10 +55,15 @@
   transition: all 0.25s ease-in-out;;
 }
 .select_dark:hover {
+  font-size: 25px;
+}
+.select_dark:active {
+  font-size: 25px;
   color: rgb(81,81,81);
   background-color: white;
   border-bottom: 2px solid white;
 }
+
 .select_light {
   letter-spacing: 1px;
   background-color: rgba(0,0,0,0);
@@ -62,10 +77,15 @@
   transition-duration: all 0.25s ease-in-out;
 }
 .select_light:hover {
+  font-size: 25px;
+}
+.select_light:active {
+  font-size: 25px;
   color: white;
   background-color: rgb(81,81,81);
   border-bottom: 2px solid rgb(81,81,81);
 }
+
 .txt_light {
   letter-spacing: 1px;
   font-size: 20px;
@@ -77,6 +97,10 @@
   border-color: rgb(81,81,81);
   color: rgb(81,81,81);
 }
+.txt_light:hover {
+  font-size: 25px;
+}
+
 .txt_dark {
   letter-spacing: 1px;
   font-size: 20px;
@@ -87,6 +111,9 @@
   background-color: rgba(0,0,0,0);
   border-color: white;
   color: white;
+}
+.txt_dark:hover {
+  font-size: 25px;
 }
 /* Other */
 .hide {
