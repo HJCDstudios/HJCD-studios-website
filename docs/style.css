@@ -150,6 +150,10 @@ td {
   width: 100px;
   height: 100px;
 }
+.img_app:hover {
+  width: 1500px;
+  height: 150px;
+}
 .apps {
   width: 100%;
 }
