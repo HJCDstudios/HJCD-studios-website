@@ -54,7 +54,7 @@ function OnTrack(event) {
 
 function OnCreateOfferSuccess(desc) {
   console.log("Setting Local Description");
-  pc.setLocalDescriotion(desc,OnSetLocalSuccess,OnSetLocalError);
+  pc.setLocalDescription(desc,OnSetLocalSuccess,OnSetLocalError);
 }
 function OnSetLocalSuccess() {
   console.log("Local Description Has Been Set");
