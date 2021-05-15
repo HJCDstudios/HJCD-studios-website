@@ -1,6 +1,10 @@
 "use strict";
 var pc = null;
 var streams = [];
+vat offerOptions = {
+  offerToReceiveAudio: 1,
+  offerToReceiveVideo: 1
+};
 function OnStart()  {
   var servers = null;
   pc = new RTCPeerConnection(servers);
@@ -9,27 +13,31 @@ function OnStart()  {
   pc.createOffer(OnCreateOfferSuccess,OnCreateSessionDescriptionError,offerOptions);
 }
 function CreateVideo() {
+  console.log("Creating Video");
   var constrains = {
     "video":true,
     "audio":false
   };
   var stream = navigator.mediaDevices.getUserMedia(constrains);
   var tracks = stream.getVideoTracks();
-  var track = tracks[0];
-  pc.addTrack(track,stream);
+  pc.addTrack(tracks[0],stream);
 }
 
 function OnIceCandidate(event) {
   pc.addIceCandidate(event.candidate).then(
-    function() { OnAddIceCandidateSuccess(pc); },
-    function(e) { OnAddIceCandidateError(pc,e); }
+    function() {
+      OnAddIceCandidateSuccess(event.candidate);
+    },
+    function(e) {
+      OnAddIceCandidateError(event.candidate,e);
+    }
   );
 }
 function OnAddIceCandidateSuccess(pc1) {
   console.log("Add Ice Candidate: " + pc1 + " Success");
 }
 function OnAddIceCandidateError(pc1,e) {
-  console.log("Add Ice Candidate: " + pc1 + " Error " + e);
+  console.log("Add Ice Candidate: " + pc1 + " Error\n" + e);
 }
 
 function OnTrack(event) {
@@ -40,9 +48,8 @@ function OnTrack(event) {
   }
   streams.push(event.streams[0]);
   var vid = document.createElement("video");
-  vid.autoplay = true;
   vid.srcObject = event.streams[0];
-  document.getElementById("OtherStreams").appendChild(vid);
+  console.log("Received a track:\n",event);
 }
 
 function OnCreateOfferSuccess(desc) {
