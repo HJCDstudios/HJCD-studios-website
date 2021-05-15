@@ -14,7 +14,9 @@ function OnStart()  {
   pc.ontrack = OnTrack;
   
   var stream = navigator.mediaDevices.getUserMedia({
-    "video":true,
+    "video":{
+      "height":"50%"
+    },
     "audio":false
   }).then(function(s) {
     document.getElementById("MyStream").srcObject = s;
@@ -41,7 +43,7 @@ function OnAddIceCandidateSuccess() {
   console.log("Add Ice Candidate Success");
 }
 function OnAddIceCandidateError(e) {
-  console.error("Add Ice Candidate Error\n",e.toString());
+  console.error("Add Ice Candidate Error\n",e);
 }
 
 function OnTrack(event) {
@@ -60,7 +62,7 @@ function OnSetLocalSuccess() {
   console.log("Local Description Has Been Set");
 }
 function OnSetLocalError(e) {
-  console.error("Set Local Description Error\n",e);
+  console.error("Set Local Description Error\n",e.toString());
 }
 
 function OnCreateSessionDescriptionError(e) {
