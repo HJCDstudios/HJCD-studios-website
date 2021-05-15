@@ -14,9 +14,7 @@ function OnStart()  {
   pc.ontrack = OnTrack;
   
   var stream = navigator.mediaDevices.getUserMedia({
-    "video":{
-      "height":"50%"
-    },
+    "video":true,
     "audio":false
   }).then(function(s) {
     document.getElementById("MyStream").srcObject = s;
@@ -29,7 +27,7 @@ function OnStart()  {
     var offer = pc.createOffer(offerOptions);
     OnCreateOfferSuccess(offer);
   } catch (e) {
-    onCreateSessionDescriptionError(e);
+    OnCreateSessionDescriptionError(e);
   }
 }
 
@@ -56,12 +54,17 @@ function OnTrack(event) {
 
 function OnCreateOfferSuccess(desc) {
   console.log("Setting Local Description");
-  pc.setLocalDescription(desc,OnSetLocalSuccess,OnSetLocalError);
+  try {
+    pc.setLocalDescription(desc);
+    OnSetLocalSuccess();
+  } catch(e) {
+    OnSetSessionDescriptionError(e);
+  }
 }
 function OnSetLocalSuccess() {
   console.log("Local Description Has Been Set");
 }
-function OnSetLocalError(e) {
+function OnSetSessionDescriptionError(e) {
   console.error("Set Local Description Error\n",e.toString());
 }
 
