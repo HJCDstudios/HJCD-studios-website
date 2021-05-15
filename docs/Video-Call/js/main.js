@@ -6,50 +6,50 @@ var offerOptions = {
   offerToReceiveVideo: 1
 };
 function OnStart()  {
+  console.log("Creating RTCPeer");
   var servers = null;
   pc = new RTCPeerConnection(servers);
   pc.onicecandidate = OnIceCandidate;
+  pc.onconnectionstatechange = OnIceStateChange;
   pc.ontrack = OnTrack;
-  pc.createOffer(OnCreateOfferSuccess,OnCreateSessionDescriptionError,offerOptions);
-}
-function CreateVideo() {
-  console.log("Creating Video");
-  var constrains = {
+  
+  var stream = navigator.mediaDevices.getUserMedia({
     "video":true,
     "audio":false
-  };
-  var stream = navigator.mediaDevices.getUserMedia(constrains);
-  var tracks = stream.getVideoTracks();
-  pc.addTrack(tracks[0],stream);
+  });
+  stream.getTracks().forEach(function(track) {
+    pc.addTrack(track,stream);
+  });
+  document.getElementById("MyStream").srcObject = stream;
+  
+  try {
+    console.log('pc createOffer start');
+    var offer = pc.createOffer(offerOptions);
+    OnCreateOfferSuccess(offer);
+  } catch (e) {
+    onCreateSessionDescriptionError(e);
+  }
 }
 
 function OnIceCandidate(event) {
   pc.addIceCandidate(event.candidate).then(
-    function() {
-      OnAddIceCandidateSuccess(event.candidate);
-    },
-    function(e) {
-      OnAddIceCandidateError(event.candidate,e);
-    }
+    OnAddIceCandidateSuccess,
+    OnAddIceCandidateError
   );
 }
-function OnAddIceCandidateSuccess(pc1) {
-  console.log("Add Ice Candidate: " + pc1 + " Success");
+function OnAddIceCandidateSuccess() {
+  console.log("Add Ice Candidate Success");
 }
 function OnAddIceCandidateError(pc1,e) {
-  console.log("Add Ice Candidate: " + pc1 + " Error\n" + e);
+  console.error("Add Ice Candidate Error\n" + e);
 }
 
 function OnTrack(event) {
-  for(var i = 0; i < streams.length; i++) {
-    if (streams[i] == event.streams[0]) {
-      return;
-    }
-  }
-  streams.push(event.streams[0]);
   var vid = document.createElement("video");
-  vid.srcObject = event.streams[0];
-  console.log("Received a track:\n",event);
+  if (vid.srcObject != event.streams[0]) {
+    vid.srcObject = event.streams[0];
+    console.log("Received a track:\n",event);
+  }
 }
 
 function OnCreateOfferSuccess(desc) {
@@ -65,4 +65,11 @@ function OnSetLocalError(e) {
 
 function OnCreateSessionDescriptionError(e) {
   console.error("OCDE Error\n" + e);
+}
+
+function OnIceStateChange(event) {
+  if (pc) {
+    console.log("ICE state: " + pc.iceConnectionState);
+    console.log("ICE state change event: ", event);
+  }
 }
