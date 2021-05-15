@@ -40,8 +40,8 @@ function OnIceCandidate(event) {
 function OnAddIceCandidateSuccess() {
   console.log("Add Ice Candidate Success");
 }
-function OnAddIceCandidateError(pc1,e) {
-  console.error("Add Ice Candidate Error\n" + e);
+function OnAddIceCandidateError(e) {
+  console.error("Add Ice Candidate Error\n",e);
 }
 
 function OnTrack(event) {
@@ -60,11 +60,11 @@ function OnSetLocalSuccess() {
   console.log("Local Description Has Been Set");
 }
 function OnSetLocalError(e) {
-  console.error("Set Local Description Error: " + e);
+  console.error("Set Local Description Error\n",e);
 }
 
 function OnCreateSessionDescriptionError(e) {
-  console.error("OCDE Error\n" + e);
+  console.error("OCDE Error\n",e);
 }
 
 function OnIceStateChange(event) {
