@@ -17,10 +17,10 @@ function OnStart()  {
     "video":true,
     "audio":false
   });
+  document.getElementById("MyStream").srcObject = stream;
   stream.getTracks().forEach(function(track) {
     pc.addTrack(track,stream);
   });
-  document.getElementById("MyStream").srcObject = stream;
   
   try {
     console.log('pc createOffer start');
