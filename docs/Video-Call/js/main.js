@@ -62,3 +62,7 @@ function OnSetLocalSuccess() {
 function OnSetLocalError(e) {
   console.error("Set Local Description Error: " + e);
 }
+
+function OnCreateSessionDescriptionError(e) {
+  console.error("OCDE Error\n" + e);
+}
