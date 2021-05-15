@@ -41,7 +41,7 @@ function OnAddIceCandidateSuccess() {
   console.log("Add Ice Candidate Success");
 }
 function OnAddIceCandidateError(e) {
-  console.error("Add Ice Candidate Error\n",e);
+  console.error("Add Ice Candidate Error\n",e.toString());
 }
 
 function OnTrack(event) {
