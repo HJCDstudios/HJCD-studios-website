@@ -16,12 +16,12 @@ function OnStart()  {
   var stream = navigator.mediaDevices.getUserMedia({
     "video":true,
     "audio":false
+  }).then(function(s) {
+    document.getElementById("MyStream").srcObject = s;
+    stream.getTracks().forEach(function(track) {
+      pc.addTrack(track,stream);
+    });
   });
-  document.getElementById("MyStream").srcObject = stream;
-  stream.getTracks().forEach(function(track) {
-    pc.addTrack(track,stream);
-  });
-  
   try {
     console.log('pc createOffer start');
     var offer = pc.createOffer(offerOptions);
